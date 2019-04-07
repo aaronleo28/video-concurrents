@@ -8,4 +8,10 @@ privateRouter.get('/video/:videoId', async (ctx, next) => {
       });
 });
 
+privateRouter.get('/', async (ctx, next) => {
+  await ctx.render('home', {
+    user: ctx.state.user
+  });
+});
+
 export default privateRouter;

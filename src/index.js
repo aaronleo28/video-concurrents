@@ -27,7 +27,7 @@ app
   .use(middlewares.error())
   .use(publicApiRouter.routes())
   .use(publicClientRouter.routes())
-  .use(jwt({ secret: config.jwtTokenSecret, cookie: config.jwtCookieName }))
+  .use(jwt({ secret: config.jwtTokenSecret, cookie: config.cookieName }))
   .use(privateApiRouter.routes())
   .use(privateClientRouter.routes())
   .use(publicApiRouter.allowedMethods());
