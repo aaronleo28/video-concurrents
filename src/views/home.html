@@ -1,1 +1,6 @@
-<p>Welcome <%= user.username %>, to the inner circle</p>
+<p>Welcome <%= user.username %>, to this video streaming service.</p>
+
+<% streams.forEach(function (stream) {%>
+    <a href="/stream/<%= stream.id %>"><%= stream.name %></a>
+    <br />
+<% })%>

@@ -18,7 +18,7 @@ publicRouter.post('/register/submit', middlewares.checkUserCredentials(), async 
   const { token } = await auth.registerUser(ctx.request.body);
 
   ctx.cookies.set(config.cookieName, token);
-  ctx.redirect('/')
+  ctx.redirect('/');
 });
 
 publicRouter.post('/login/submit', middlewares.checkUserCredentials(), async (ctx, next) => {

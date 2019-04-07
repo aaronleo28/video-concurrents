@@ -14,7 +14,7 @@ const registerUser = async ({ username, password }) => {
     }
     
     const hash = await bcrypt.hash(password, 10);
-    const row = await collection.insertOne({ username, password: hash });
+    const row = await collection.insertOne({ username, password: hash, sessions: 0 });
     
     if (row.result.ok) {
         const token = jwt.sign({ username, password: hash }, config.jwtTokenSecret);

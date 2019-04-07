@@ -7,6 +7,7 @@ import render from 'koa-ejs';
 import path from 'path';
 
 import config from './config';
+import socketHelper from './socket';
 import middlewares from './middlewares';
 import publicApiRouter from './routes/api/public';
 import privateApiRouter from './routes/api/private';
@@ -27,6 +28,7 @@ app
   .use(middlewares.error())
   .use(publicApiRouter.routes())
   .use(publicClientRouter.routes())
+  
   .use(jwt({ secret: config.jwtTokenSecret, cookie: config.cookieName }))
   .use(privateApiRouter.routes())
   .use(privateClientRouter.routes())
@@ -35,6 +37,10 @@ app
 const server = http.createServer(app.callback());
 const io = socket(server);
 
-io.on('connection', () => { /* … */ });
+io.on('connection', client => {
+  socketHelper.onConnect(client);
+
+  client.on('disconnect', () => { socketHelper.onDisconnect(client); });
+});
 console.log(`Listening on port ${config.port}!`);
 server.listen(3000);
