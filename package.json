@@ -18,9 +18,11 @@
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
+    "koa-ejs": "^4.2.0",
     "koa-jwt": "^3.5.1",
     "koa-router": "^7.4.0",
-    "mongodb": "^3.2.2"
+    "mongodb": "^3.2.2",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",

@@ -1,7 +1,7 @@
 import Router from 'koa-router';
 
-import auth from '../auth';
-import middlewares from '../middlewares';
+import auth from '../../auth';
+import middlewares from '../../middlewares';
 
 const publicRouter = new Router({ prefix: '/api/v1' });
 
