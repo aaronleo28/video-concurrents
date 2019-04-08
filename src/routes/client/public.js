@@ -7,11 +7,11 @@ import config from '../../config';
 const publicRouter = new Router();
 
 publicRouter.get('/register', async (ctx, next) => {
-    await ctx.render('register', { action: '/register/submit' });
+    await ctx.render('register', { action: '/register/submit', header: 'Register' });
 });
 
 publicRouter.get('/login', async (ctx, next) => {
-  await ctx.render('register', { action: '/login/submit' });
+  await ctx.render('register', { action: '/login/submit', header: 'Login' });
 });
 
 publicRouter.post('/register/submit', middlewares.checkUserCredentials(), async (ctx, next) => {
