@@ -17,7 +17,7 @@ import privateClientRouter from './routes/client/private';
 const app = new Koa();
 
 render(app, {
-    root: path.join(__dirname, 'views'),
+    root: path.join(__dirname, '../src/views'),
     layout: 'template',
     viewExt: 'html',
     cache: false
