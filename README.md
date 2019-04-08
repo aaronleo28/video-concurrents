@@ -2,7 +2,7 @@
 
 - clone the repo and cd into it
 - run `docker-compose build`
-- run `docker-compose run --rm --no-deps video-concurrents bash -ci 'npm install'`
+- run `docker-compose run --rm --no-deps video-concurrents bash -ci 'npm install --unsafe-perm'`
 - run `docker-compose up`
 
 ## See it working instructions
