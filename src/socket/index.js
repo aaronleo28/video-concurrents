@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-import connect from '../database/connect';
+import { connect } from '../database/connect';
 import config from '../config';
 
 const onConnect = async client => {

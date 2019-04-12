@@ -1,4 +1,4 @@
-import connect from '../database/connect';
+import { connect } from '../database/connect';
 import config from '../config';
 
 const checkSessions = () => async (ctx, next) => {

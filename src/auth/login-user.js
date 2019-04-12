@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 import config from '../config';
-import connect from '../database/connect';
+import { connect } from '../database/connect';
 
 const loginUser = async ({ username, password }) => {
     const db = await connect();
