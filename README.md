@@ -19,6 +19,10 @@
 
 6. Go to http://localhost:3000/logout if you want to log out
 
+## Run tests
+
+- `docker exec -it video-concurrents npm test`
+
 ## API Register
 
 - To register for an api token use the below method of auth
